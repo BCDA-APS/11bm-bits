@@ -6,20 +6,19 @@ Instrument Github Repository to be used with BITS structure at the APS
 ## Installing your own BITS instrument
 
 ```bash
-export ENV_NAME=BITS_env
+export ENV_NAME=11bm-bits
 conda create -y -n $ENV_NAME python=3.11
 conda activate $ENV_NAME
 pip install apsbits
 ```
 
-
 ## Creating a New Instrument
+
 ```bash
-export YOUR_INSTRUMENT_NAME=new_instrument
+export YOUR_INSTRUMENT_NAME=bm11_b
 create-bits $YOUR_INSTRUMENT_NAME
 pip install -e .
 ```
-
 
 ## IPython console Start
 
@@ -30,12 +29,13 @@ ipython
 ```
 
 ## Jupyter Notebook Start
+
 Start JupyterLab, a Jupyter notebook server, or a notebook, VSCode.
 
 ## Starting the BITS Package
 
 ```py
-from YOUR_INSTRUMENT_NAME.startup import *
+from bm11_b.startup import *
 ```
 
 ## Run Sim Plan Demo
@@ -45,6 +45,8 @@ please run the next commands inside an ipython session or a jupyter notebook
 after starting the data acquisition:
 
 ```py
+from bm11_b.plans.sim_plans import *
+
 RE(sim_print_plan())
 RE(sim_count_plan())
 RE(sim_rel_scan_plan())
