@@ -3,29 +3,13 @@
 Instrument Github Repository to be used with BITS structure at the APS
 
 
-## Installing your own BITS instrument
-
-```bash
-export ENV_NAME=11bm-bits
-conda create -y -n $ENV_NAME python=3.11
-conda activate $ENV_NAME
-pip install apsbits
-```
-
-## Creating a New Instrument
-
-```bash
-export YOUR_INSTRUMENT_NAME=bm11_b
-create-bits $YOUR_INSTRUMENT_NAME
-pip install -e .
-```
 
 ## IPython console Start
 
 To start the bluesky instrument session in a ipython execute the next command in a terminal:
 
 ```bash
-ipython
+pixi run start
 ```
 
 Combine with starting the BITS package:
@@ -85,7 +69,7 @@ the usual way to (re)start the QS host process. Using `restart`, the process
 runs in the background.
 
 ```bash
-./src/YOUR_INSTRUMENT_NAME_qserver/qs_host.sh restart
+pixi run qs_restart
 ```
 
 ### Run a queueserver client GUI
@@ -93,16 +77,16 @@ runs in the background.
 To run the gui client for the queueserver you can use the next command inside the terminal:
 
 ```bash
-queue-monitor &
+pixi run queue-monitor
 ```
 
 ### Shell script explained
 
-A [shell script](https://github.com/BCDA-APS/BITS/blob/main/src/apsbits/demo_qserver/qs_host.sh) (`./src/YOUR_INSTRUMENT_NAME_qserver/qs_host.sh`) starts the QS host process. Below
-are all the command options, and what they do.
+A shell script starts the QS host process. Below are all the command options,
+and what they do.
 
 ```bash
-(BITS_env) $ ./src/YOUR_INSTRUMENT_NAME_qserver/qs_host.sh help
+$ pixi run qs_host help
 Usage: qs_host.sh {start|stop|restart|status|checkup|console|run} [NAME]
 
     COMMANDS
@@ -118,10 +102,8 @@ Usage: qs_host.sh {start|stop|restart|status|checkup|console|run} [NAME]
         NAME      name of process (default: bluesky_queueserver-)
 ```
 
-Alternatively, run the QS host's startup command directly within the `./qserver/`
-subdirectory.
+Alternatively, run the QS host's startup command directly:
 
 ```bash
-cd ./qserver
-start-re-manager --config=./qs-config.yml
+pixi run qs_start_manager
 ```
