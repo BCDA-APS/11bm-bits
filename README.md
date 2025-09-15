@@ -28,6 +28,12 @@ To start the bluesky instrument session in a ipython execute the next command in
 ipython
 ```
 
+Combine with starting the BITS package:
+
+```bash
+ipython -i -c "from bm11_b.startup import *"
+```
+
 ## Jupyter Notebook Start
 
 Start JupyterLab, a Jupyter notebook server, or a notebook, VSCode.
