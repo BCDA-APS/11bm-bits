@@ -3,6 +3,22 @@
 Instrument Github Repository to be used with BITS structure at the APS
 
 
+## Installing your own BITS instrument
+
+```bash
+export ENV_NAME=11bm-bits
+conda create -y -n $ENV_NAME python=3.11
+conda activate $ENV_NAME
+pip install apsbits
+```
+
+## Creating a New Instrument
+
+```bash
+export YOUR_INSTRUMENT_NAME=bm11_b
+create-bits $YOUR_INSTRUMENT_NAME
+pip install -e .
+```
 
 ## IPython console Start
 
