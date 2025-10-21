@@ -6,13 +6,13 @@ ICONFIG_VERSION: 2.0.1
 # Add additional configuration for use with your instrument.
 
 ### The short name for the databroker catalog.
-DATABROKER_CATALOG: temp
+DATABROKER_CATALOG: 11bmb
 
 ### RunEngine configuration
 RUN_ENGINE:
     DEFAULT_METADATA:
-        beamline_id: demo_instrument
-        instrument_name: Most Glorious Scientific Instrument
+        beamline_id: 11bm-b
+        instrument_name: APS 11BM-B Powder Diffractometer
         proposal_id: commissioning
 
     ### EPICS PV to use for the `scan_id`.
@@ -40,7 +40,7 @@ BASELINE_LABEL:
 BEC:
     BASELINE: true
     HEADING: true
-    PLOTS: false
+    PLOTS: true
     TABLE: true
 
 ### Support for known output file formats.
@@ -51,7 +51,7 @@ NEXUS_DATA_FILES:
     FILE_EXTENSION: hdf
 
 SPEC_DATA_FILES:
-    ENABLE: true
+    ENABLE: false
     FILE_EXTENSION: dat
 
 ### APS Data Management
