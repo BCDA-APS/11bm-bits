@@ -113,6 +113,6 @@ if host_on_aps_subnet():
 # Devices with the label 'baseline' will be added to the baseline stream.
 setup_baseline_stream(sd, oregistry, connect=False)
 
-from .plans.sim_plans import sim_count_plan  # noqa: E402, F401
-from .plans.sim_plans import sim_print_plan  # noqa: E402, F401
-from .plans.sim_plans import sim_rel_scan_plan  # noqa: E402, F401
+from bm11_b.plans.slewscan import slew_scan  # noqa
+I1 = oregistry["scaler1"].channels.chan03.s
+oregistry["scaler1"].select_channels()
