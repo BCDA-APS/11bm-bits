@@ -5,4 +5,4 @@
 apstools.devices.ApsMachineParametersDevice:
 - name: aps
   labels:
-  # - baseline  # FIXME: re-enable once PVs become accessible
+  - baseline
