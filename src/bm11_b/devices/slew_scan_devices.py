@@ -21,7 +21,7 @@ class SlewDevice(Device):
     scanComment = Cpt(EpicsSignal, "saveData_comment1", kind="config")
     sampleComment = Cpt(EpicsSignal, "saveData_comment2", kind="config")
 
-    mda_root = Cpt(Signal, value='/net/s11bmsrv1/', kind='normal', string=True)
+    mda_root = Cpt(Signal, value='/net/s11bmsrv1/', kind='normal')
     mda_file = Cpt(EpicsSignal, "saveData_fileName", kind="normal", string=True)
     mda_path = Cpt(EpicsSignal, "saveData_fullPathName", kind="normal", string=True)
 
@@ -40,7 +40,7 @@ class SlewDevice(Device):
 
 class SpyLambda(Device):
     fname = Cpt(EpicsSignalRO,'HDF1:FullFileName_RBV')
-    save_state = Cpt(EpicsSignalRO, "HDF1:WriteFile", string=True)
+    save_state = Cpt(EpicsSignalRO, "HDF1:WriteFile", string=True, kind='omitted')
 
     def trigger(self):
         def cb(value, old_value, **kwargs):
